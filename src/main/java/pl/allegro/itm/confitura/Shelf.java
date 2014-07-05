@@ -1,11 +1,7 @@
 package pl.allegro.itm.confitura;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class Shelf implements Iterable<Jar> {
 
@@ -22,6 +18,10 @@ public class Shelf implements Iterable<Jar> {
     @Override
     public Iterator<Jar> iterator() {
         return Collections.unmodifiableCollection(jars).iterator();
+    }
+
+    public Stream<Jar> getJarsStream() {
+        return jars.stream();
     }
     
 }
