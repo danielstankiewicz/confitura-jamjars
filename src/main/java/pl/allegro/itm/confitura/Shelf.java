@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Shelf implements Iterable<Jar> {
 
@@ -22,6 +23,10 @@ public class Shelf implements Iterable<Jar> {
     @Override
     public Iterator<Jar> iterator() {
         return Collections.unmodifiableCollection(jars).iterator();
+    }
+
+    public Stream<Jar> getJarStream() {
+        return Collections.unmodifiableCollection(jars).stream();
     }
     
 }
